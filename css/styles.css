@@ -1,0 +1,110 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+html, body { 
+    font-family: Arial, sans-serif; 
+    height: 100%; 
+    margin: 0; 
+    padding: 0; 
+}
+
+h1 { 
+    color: #525454; 
+    font-size: 22px;
+    margin: 0 0 10px 0; 
+    text-align: center; 
+}
+
+#hide-listings, #show-listings { 
+    width: 45%;
+}
+
+.right_part {
+    bottom:0px; 
+    height: 100%;
+    left: 362px; 
+    position: absolute; 
+    right: 0px; 
+}
+
+.container { 
+    height: 100%; 
+    position: relative; 
+}
+
+input { 
+    font-size: 13px; 
+}
+
+.header {
+	width: 100%;
+	height: 45px;
+    position: absolute;  
+    background-color: #383838;
+    display: inline-flex;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.hamBtn {
+	font-size: 30px;
+	color: #FF7F24;
+}
+
+#map { 
+	top: 62px;
+    bottom:0px; 
+    height: 100%;
+    right: 0px; 
+}
+
+.options-box {
+	position:absolute;
+	left:0px;
+	top:60px;
+	z-index: 10;
+    padding: 1.5em;
+    background: #383838;
+    height: 100%;
+    width: 14em;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.2s;
+}
+
+.hidden-box {
+    transform: translate3d(-17em, 0, 0);
+    transition: transform 0.2s;
+}
+
+.search_text {
+	height: 25px;
+	width: 200px;
+    border: 1px, solid, #FF7F24;
+}
+
+.search_btn {
+    height: 30px;
+    border: 1px, solid, #FF7F24;
+}
+
+.location_list {
+    margin: 0;
+    padding-top: 20px;
+}
+
+.location_list li {
+    height: 45px;
+    list-style: none;
+	color: #EAEAEA;
+}
+
