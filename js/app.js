@@ -1,59 +1,3 @@
-//侧边栏隐藏与显示
-$(document).ready(function(){
-    $("span").click(function(){
-        $("nav").toggleClass("hidden-box");
-    });
-});
-
-//console.log($("body")[0].offsetWidth);
-if ($("body")[0].offsetWidth < 450) {
-    $("nav").toggleClass("hidden-box");
-}
-
-//标识你感兴趣的至少 5 个周边地点
-var locations = [
-    {
-        title: '清华大学', 
-        position: [116.326836,40.00366]
-    },
-    {
-        title: '北京大学', 
-        position: [116.31088,39.99281]
-    },
-    {
-        title: '中国人民大学', 
-        position: [116.313361,39.970561]
-    },
-    {
-        title: '北京理工大学', 
-        position: [116.3152,39.959985]
-    },
-    {
-        title: '首都医科大学', 
-        position: [116.352795,39.863488]
-    },
-    {
-        title: '中国农业大学', 
-        position: [116.357122,40.005004]
-    },
-    {
-        title: '北京工业大学', 
-        position: [116.481706,39.875344]
-    },
-    {
-        title: '北京师范大学', 
-        position: [116.365798,39.961576]
-    },
-    {
-        title: '中央财经大学', 
-        position: [116.342408,39.959491]
-    },
-    {
-        title: '对外经济贸易大学', 
-        position: [116.427721,39.980381]
-    },
-];
-
 var currentLocations = [];
 var map;
 var markers = [];
@@ -61,6 +5,16 @@ var infoWindow;
 // 创建默认标记样式和高亮标记样式
 var defaultIcon = 'http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png';
 var highlightedIcon = 'http://webapi.amap.com/theme/v1.3/markers/n/mark_r.png';
+
+var txt=""
+function handleErr()
+{
+    txt = "There was an error on this page.\n\n"
+    txt += "You can't load the map successfully!\n\n"
+    txt += "Click OK to continue.\n\n"
+    alert(txt)
+    return true
+}
 
 //加载地图API后立即执行该函数
 function init(){
@@ -93,7 +47,7 @@ function init(){
 
 //创建地图标记
 function setMarkers(location){
-    for(var i = 0; i < location.length; i++){
+    for(let i = 0; i < location.length; i++){
         var position = location[i].position;
         var title = location[i].title;
 
@@ -180,6 +134,17 @@ var ViewModel = function(){
     //保留一个指针，保留一个访问外层“this”的方式
     var self = this;
 
+    //侧边栏隐藏与显示
+    this.shouldShowBox = ko.observable(true);
+
+    this.show_box = function(){
+        self.shouldShowBox(true);
+    }
+
+    this.hidden_box = function(){
+        self.shouldShowBox(false);
+    }
+
     this.userInput = ko.observable("");
 
     //监控数组，用于存放列表视图中的地点  
@@ -222,3 +187,7 @@ var ViewModel = function(){
 }
 
 ko.applyBindings(new ViewModel());
+
+/*if ($("body")[0].offsetWidth < 450) {
+    $("nav").toggleClass("hidden-box");
+}*/
