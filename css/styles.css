@@ -1,5 +1,6 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 @import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(http://weloveiconfonts.com/api/?family=iconicfill);
 
 /* fontawesome */
 [class*="fontawesome-"]:before {
@@ -9,6 +10,11 @@
 /* entypo */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
+}
+
+/* iconicfill */
+[class*="iconicfill-"]:before {
+  font-family: 'IconicFill', sans-serif;
 }
 
 html, body { 
@@ -61,6 +67,11 @@ input {
 	color: #FF7F24;
 }
 
+.hiddenBtn{
+    float: right;
+    padding-bottom: 20px;
+}
+
 #map { 
 	top: 62px;
     bottom:0px; 
@@ -71,7 +82,7 @@ input {
 .options-box {
 	position:absolute;
 	left:0px;
-	top:60px;
+	/*top:60px;*/
 	z-index: 10;
     padding: 1.5em;
     background: #383838;
@@ -107,4 +118,5 @@ input {
     list-style: none;
 	color: #EAEAEA;
 }
+
 
